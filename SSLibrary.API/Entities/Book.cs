@@ -4,6 +4,7 @@ public class Book
 {
     public int Id { get; set; }
     public string Name { get; set; }
+    public DateOnly PublicationDate { get; set; }
     
     // Foreign Keys
     public int AuthorId { get; set; }

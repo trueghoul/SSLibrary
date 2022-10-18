@@ -8,6 +8,6 @@ public class LibraryCard
     public Book Book { get; set; }
     public int PersonId { get; set; }
     public Person Person { get; set; }
-    [DisplayFormat(DataFormatString = "MM/dd/yyyy HH:mm:ss", ApplyFormatInEditMode = true)]
+    [DisplayFormat(DataFormatString = "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss.fffzzz", ApplyFormatInEditMode = true)]
     public DateTimeOffset BorrowingTime { get; set; }
 }

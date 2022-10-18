@@ -43,6 +43,8 @@ public class ApplicationDbContext : DbContext
             entity.Property(b => b.Name)
                 .IsRequired()
                 .HasColumnName("book");
+            entity.Property(b => b.PublicationDate)
+                .HasColumnName("publication_date");
             entity.Property(b => b.AuthorId)
                 .IsRequired()
                 .HasColumnName("author_id");
@@ -100,7 +102,7 @@ public class ApplicationDbContext : DbContext
             entity.Property(lc => lc.BookId).HasColumnName("book_id");
             entity.Property(lc => lc.PersonId).HasColumnName("person_id");
             entity.Property(lc => lc.BorrowingTime).HasColumnName("borrowing_time")
-                .HasDefaultValueSql("getdate()");
+                .HasDefaultValueSql("CURRENT_TIMESTAMP");
             entity.HasKey(lc => new {lc.BookId, lc.PersonId});
             entity.HasOne(lc => lc.Book)
                 .WithMany(b => b.LibraryCards)
