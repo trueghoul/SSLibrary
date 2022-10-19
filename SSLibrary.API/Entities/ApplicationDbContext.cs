@@ -32,6 +32,10 @@ public class ApplicationDbContext : DbContext
                 .HasColumnName("last_name");
             entity.Property(a => a.MiddleName)
                 .HasColumnName("middle_name");
+            entity.Property(a => a.CreationDate)
+                .HasColumnName("creation_date");
+            entity.Property(a => a.EditDate)
+                .HasColumnName("edit_date");
         });
         modelBuilder.Entity<Book>(entity =>
         {
@@ -48,6 +52,10 @@ public class ApplicationDbContext : DbContext
             entity.Property(b => b.AuthorId)
                 .IsRequired()
                 .HasColumnName("author_id");
+            entity.Property(b => b.CreationDate)
+                .HasColumnName("creation_date");
+            entity.Property(b => b.EditDate)
+                .HasColumnName("edit_date");
             entity.HasOne(a => a.Author)
                 .WithMany(b => b.Books)
                 .HasForeignKey(b => b.AuthorId);
@@ -71,6 +79,10 @@ public class ApplicationDbContext : DbContext
             entity.Property(p => p.MiddleName)
                 .IsRequired()
                 .HasColumnName("middle_name");
+            entity.Property(p => p.CreationDate)
+                .HasColumnName("creation_date");
+            entity.Property(p => p.EditDate)
+                .HasColumnName("edit_date");
         });
         modelBuilder.Entity<Genre>(entity =>
         {
@@ -82,6 +94,10 @@ public class ApplicationDbContext : DbContext
             entity.Property(g => g.GenreName)
                 .IsRequired()
                 .HasColumnName("genre_name");
+            entity.Property(g => g.CreationDate)
+                .HasColumnName("creation_date");
+            entity.Property(g => g.EditDate)
+                .HasColumnName("edit_date");
         });
         modelBuilder.Entity<BookGenre>(entity =>
         {
@@ -101,8 +117,7 @@ public class ApplicationDbContext : DbContext
             entity.ToTable("library_card");
             entity.Property(lc => lc.BookId).HasColumnName("book_id");
             entity.Property(lc => lc.PersonId).HasColumnName("person_id");
-            entity.Property(lc => lc.BorrowingTime).HasColumnName("borrowing_time")
-                .HasDefaultValueSql("CURRENT_TIMESTAMP");
+            entity.Property(lc => lc.BorrowingTime).HasColumnName("borrowing_time");
             entity.HasKey(lc => new {lc.BookId, lc.PersonId});
             entity.HasOne(lc => lc.Book)
                 .WithMany(b => b.LibraryCards)

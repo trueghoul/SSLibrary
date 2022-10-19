@@ -4,7 +4,6 @@ namespace SSLibrary.API.Entities;
 // unused
 public class Timestamps
 {
-    public DateTimeOffset InsertionTime { get; set; }
-    public DateTimeOffset ModificationTime { get; set; }
-    public string RecordVersion { get; set; }
+    public DateTimeOffset CreationDate { get; set; }
+    public DateTimeOffset? EditDate { get; set; }
 }

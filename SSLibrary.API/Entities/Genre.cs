@@ -1,6 +1,6 @@
 namespace SSLibrary.API.Entities;
 
-public class Genre
+public class Genre : Timestamps
 {
     public int Id { get; set; }
     public string GenreName { get; set; }

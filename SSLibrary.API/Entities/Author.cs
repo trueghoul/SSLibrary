@@ -1,6 +1,6 @@
 namespace SSLibrary.API.Entities;
 
-public class Author
+public class Author : Timestamps
 {
     public int Id { get; set; }
     public string FirstName { get; set; }
