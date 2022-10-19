@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SSLibrary.API.Entities;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
     :base(options)
@@ -22,7 +22,6 @@ public class ApplicationDbContext : DbContext
             entity.ToTable("author");
             entity.HasKey(a => a.Id);
             entity.Property(a => a.Id)
-                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(a => a.FirstName)
                 .IsRequired()
@@ -42,7 +41,6 @@ public class ApplicationDbContext : DbContext
             entity.ToTable("book");
             entity.HasKey(b => b.Id);
             entity.Property(b => b.Id)
-                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(b => b.Name)
                 .IsRequired()
@@ -65,7 +63,6 @@ public class ApplicationDbContext : DbContext
             entity.ToTable("person");
             entity.HasKey(p => p.Id);
             entity.Property(p => p.Id)
-                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(p => p.BirthDate)
                 .HasColumnType("date")
@@ -89,7 +86,6 @@ public class ApplicationDbContext : DbContext
             entity.ToTable("genre");
             entity.HasKey(g => g.Id);
             entity.Property(g => g.Id)
-                .ValueGeneratedOnAdd()
                 .HasColumnName("id");
             entity.Property(g => g.GenreName)
                 .IsRequired()

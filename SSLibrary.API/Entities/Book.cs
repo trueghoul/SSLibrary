@@ -2,12 +2,12 @@ namespace SSLibrary.API.Entities;
 
 public class Book : Timestamps
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string Name { get; set; }
     public DateOnly PublicationDate { get; set; }
     
     // Foreign Keys
-    public int AuthorId { get; set; }
+    public Guid AuthorId { get; set; }
     // Navigation properties
     public Author Author { get; set; }
     public ICollection<BookGenre> BookGenres { get; set; }
