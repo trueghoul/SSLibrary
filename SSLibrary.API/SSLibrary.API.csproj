@@ -23,7 +23,6 @@
     <ItemGroup>
       <Folder Include="Controllers" />
       <Folder Include="CQRS\Persons\Commands" />
-      <Folder Include="CQRS\Persons\Queries" />
     </ItemGroup>
 
 </Project>
