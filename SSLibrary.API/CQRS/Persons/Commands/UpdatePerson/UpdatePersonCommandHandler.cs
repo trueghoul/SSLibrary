@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SSLibrary.API.Entities;
 using SSLibrary.API.Exceptions;
 
-namespace SSLibrary.API.CQRS.Persons.UpdatePerson;
+namespace SSLibrary.API.CQRS.Persons.Commands.UpdatePerson;
 
 public class UpdatePersonCommandHandler : IRequestHandler<UpdatePersonCommand>
 {

@@ -2,7 +2,7 @@ using MediatR;
 using SSLibrary.API.Entities;
 using SSLibrary.API.Exceptions;
 
-namespace SSLibrary.API.CQRS.Persons.DeletePerson;
+namespace SSLibrary.API.CQRS.Persons.Commands.DeletePerson;
 
 public class DeletePersonCommandHandler : IRequestHandler<DeletePersonCommand>
 {

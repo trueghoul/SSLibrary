@@ -1,11 +1,10 @@
 using MediatR;
 
-namespace SSLibrary.API.CQRS.Persons.CreatePerson;
+namespace SSLibrary.API.CQRS.Persons.Commands.DeletePerson;
 
-public class CreatePersonCommand : IRequest<Guid>
+public class DeletePersonByFullNameCommand : IRequest
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string MiddleName { get; set; }
-    public DateTime BirthDate { get; set; }
 }

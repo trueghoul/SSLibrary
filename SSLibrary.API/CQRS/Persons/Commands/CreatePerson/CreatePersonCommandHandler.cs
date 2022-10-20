@@ -1,7 +1,7 @@
 using MediatR;
 using SSLibrary.API.Entities;
 
-namespace SSLibrary.API.CQRS.Persons.CreatePerson;
+namespace SSLibrary.API.CQRS.Persons.Commands.CreatePerson;
 
 public class CreatePersonCommandHandler : IRequestHandler<CreatePersonCommand, Guid>
 {

@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace SSLibrary.API.CQRS.Persons.UpdatePerson;
+namespace SSLibrary.API.CQRS.Persons.Commands.UpdatePerson;
 
 public class UpdatePersonCommand : IRequest
 {

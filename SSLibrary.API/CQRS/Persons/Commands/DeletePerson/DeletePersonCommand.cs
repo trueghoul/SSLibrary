@@ -1,6 +1,6 @@
 using MediatR;
 
-namespace SSLibrary.API.CQRS.Persons.DeletePerson;
+namespace SSLibrary.API.CQRS.Persons.Commands.DeletePerson;
 
 public class DeletePersonCommand : IRequest
 {
