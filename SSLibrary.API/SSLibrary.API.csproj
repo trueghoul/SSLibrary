@@ -25,6 +25,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="CQRS\Authors\Queries" />
+      <Folder Include="CQRS\Books\Commands" />
+      <Folder Include="CQRS\Books\Queries" />
       <Folder Include="CQRS\Persons\Commands" />
       <Folder Include="Models" />
     </ItemGroup>
